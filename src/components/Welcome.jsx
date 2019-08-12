@@ -9,7 +9,7 @@ export default class Welcome extends React.Component {
         <img src={logo} className="App-logo" alt="logo" />
         <p>Help your community develop a closed-loop waste cycle.</p>
         <h5 className="enter" onClick={this.props.changeView}>
-          Join the movement
+          Join the movement.
         </h5>
       </header>
     );

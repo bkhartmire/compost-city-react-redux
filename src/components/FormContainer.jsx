@@ -8,14 +8,23 @@ export default class FormContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: true
+      form: "login"
     };
   }
+
+  changeForm(changeTo) {
+    this.setState({ form: changeTo });
+  }
+
   render() {
     return (
       <div id="form-container">
-        <Login />
-        <SignUp />
+        {this.state.form === "login" && (
+          <Login changeForm={() => this.changeForm("signup")} />
+        )}
+        {this.state.form === "signup" && (
+          <SignUp changeForm={() => this.changeForm("login")} />
+        )}
       </div>
     );
   }

@@ -4,38 +4,45 @@ import "./FormContainer.css";
 export default class SignUp extends React.Component {
   render() {
     return (
-      <form id="login">
-        <div className="form-group">
-          <label>Log In</label>
-          <input
-            name=""
-            className="form-control"
-            placeholder="Email"
-            type="email"
-          />
-        </div>
-        <div className="form-group">
-          <input
-            className="form-control"
-            placeholder="Password"
-            type="password"
-          />
-        </div>
-        <div className="form-group">
-          <div className="checkbox">
-            <label>
-              {" "}
-              <input type="checkbox" /> Save password{" "}
-            </label>
+      <div id="signup">
+        <form id="signup-form">
+          <div className="form-group">
+            <label class="title">Sign Up</label>
+            <input name="" className="form-control" placeholder="Username" />
           </div>
-        </div>
-        <div className="form-group">
-          <button type="submit" className="btn btn-primary btn-block">
-            {" "}
-            Login{" "}
-          </button>
-        </div>
-      </form>
+          <div className="form-group">
+            <input
+              name=""
+              className="form-control"
+              placeholder="Email"
+              type="email"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              className="form-control"
+              placeholder="Password"
+              type="password"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              className="form-control"
+              placeholder="Confirm Password"
+              type="password"
+            />
+          </div>
+          <div className="form-group">
+            <button type="submit" className="green-btn">
+              {" "}
+              Sign Up{" "}
+            </button>
+          </div>
+        </form>
+        <p className="form" onClick={this.props.changeForm}>
+          Already have an account?
+        </p>
+      </div>
     );
   }
 }
