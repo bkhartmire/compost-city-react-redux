@@ -8,6 +8,7 @@ exports.up = function(knex) {
       .notNullable()
       .unique();
     t.string("zip_code").notNullable();
+    t.timestamp("created_at").defaultTo(knex.fn.now());
   });
 };
 

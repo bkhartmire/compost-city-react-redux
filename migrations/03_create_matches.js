@@ -11,6 +11,7 @@ exports.up = function(knex) {
     t.foreign("user_id")
       .references("id")
       .inTable("users");
+    t.timestamp("created_at").defaultTo(knex.fn.now());
   });
 };
 

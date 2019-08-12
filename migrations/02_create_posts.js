@@ -9,6 +9,10 @@ exports.up = function(knex) {
     t.foreign("user_email")
       .references("email")
       .inTable("users");
+    t.boolean("food_scraps").defaultTo(false);
+    t.boolean("human_or_animal_waste").defaultTo(false);
+    t.boolean("bokashi").defaultTo(false);
+    t.timestamp("created_at").defaultTo(knex.fn.now());
   });
 };
 
