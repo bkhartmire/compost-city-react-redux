@@ -18,9 +18,6 @@ const db = knex({
   migration: {
     tablename: "knex_migrations",
     directory: "../migrations"
-  },
-  seeds: {
-    directory: "../seeds"
   }
 });
 
