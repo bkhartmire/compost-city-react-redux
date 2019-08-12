@@ -1,0 +1,16 @@
+exports.up = function(knex) {
+  return knex.schema.createTable("users", t => {
+    t.increments().index();
+    t.string("email")
+      .notNullable()
+      .unique();
+    t.string("username")
+      .notNullable()
+      .unique();
+    t.string("zip_code").notNullable();
+  });
+};
+
+exports.down = function(knex, Promise) {
+  return knex.schema.dropTable("users");
+};
