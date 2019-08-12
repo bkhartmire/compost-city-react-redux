@@ -1,31 +1,29 @@
 import React from "react";
 import "./App.css";
 import Welcome from "./components/Welcome";
-import FormContainer from "./components/FormContainer";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import Home from "./components/Home";
+import { connect } from "react-redux";
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    //welcome, form, home
-    this.state = {
-      view: "welcome"
-    };
-  }
-
-  changeView(newView) {
-    this.setState({ view: newView });
-  }
-
+class App extends React.Component {
   render() {
     return (
       <div className="App">
-        {this.state.view === "welcome" && (
-          <Welcome changeView={() => this.changeView("form")} />
-        )}
-        {this.state.view === "form" && (
-          <FormContainer changeView={() => this.changeView("home")} />
-        )}
+        {this.props.view === "welcome" && <Welcome />}
+        {this.props.view === "loginForm" && <Login />}
+        {this.props.view === "signupForm" && <Signup />}
+        {this.props.currentUser && <Home />}
       </div>
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    currentUser: state.currentUser,
+    view: state.view
+  };
+};
+
+export default connect(mapStateToProps)(App);

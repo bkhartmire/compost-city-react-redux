@@ -1,7 +1,8 @@
 import React from "react";
-import "./FormContainer.css";
+import "./UserForms.css";
+import { connect } from "react-redux";
 
-export default class SignUp extends React.Component {
+class Signup extends React.Component {
   render() {
     return (
       <div id="signup">
@@ -39,10 +40,23 @@ export default class SignUp extends React.Component {
             </button>
           </div>
         </form>
-        <p className="form" onClick={this.props.changeForm}>
+        <p className="form" onClick={this.props.viewLoginForm}>
           Already have an account?
         </p>
       </div>
     );
   }
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    viewLoginForm: () => {
+      dispatch({ type: "VIEW_LOGIN_FORM" });
+    }
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Signup);

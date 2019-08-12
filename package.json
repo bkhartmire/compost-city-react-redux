@@ -2,8 +2,11 @@
   "name": "compost-city-react-redux",
   "version": "0.1.0",
   "private": true,
+  "license": "UNLICENSED",
+  "author": "Brittany Hartmire",
+  "proxy": "http://localhost:9000",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "dotenv": "^8.0.0",
     "express": "^4.16.3",
@@ -16,7 +19,6 @@
     "react-dom": "^16.9.0",
     "react-redux": "^5.0.7",
     "react-scripts": "3.1.0",
-    "react-spring": "^8.0.27",
     "redux": "^4.0.0",
     "redux-thunk": "^2.2.0"
   },
@@ -37,8 +39,9 @@
     "migrate": "npx knex migrate:latest --knexfile server/knex.js",
     "seed": "node seeds/01_users_seeds.js && node seeds/02_posts_seeds.js"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "engines": {
+    "node": ">=9.10.0",
+    "yarn": ">=1.6.0"
   },
   "browserslist": {
     "production": [
