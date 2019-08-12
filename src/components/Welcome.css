@@ -1,0 +1,25 @@
+.App-logo {
+  height: 40vmin;
+  pointer-events: all;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.enter {
+  color: rgb(110, 180, 62);
+  border-bottom: 1px solid rgb(110, 180, 62);
+}
+
+.enter:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
