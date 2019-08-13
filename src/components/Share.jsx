@@ -22,7 +22,6 @@ class Share extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    e.target.reset();
     this.props.submitZipcode({
       zipcode: this.state.zipcode,
       radius: this.state.radius,

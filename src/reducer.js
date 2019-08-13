@@ -40,9 +40,9 @@ const reducer = (state = defaultState, action) => {
     case "SET_USER_TYPE":
       window.localStorage.setItem("userType", action.payload);
       return { ...state, userType: action.payload };
-    case "LOG_OUT":
+    case "LOGOUT_USER":
       window.localStorage.clear();
-      return { ...defaultState, currentUser: null };
+      return { ...defaultState, currentUser: null, view: "welcome" };
     case "SET_QUERY":
       return { ...state, query: action.payload };
     case "LIST_RESULTS":
