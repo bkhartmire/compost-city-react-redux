@@ -10,29 +10,14 @@ class Selection extends React.Component {
     return (
       <div id="selection">
         <div className="nav-link-container">
-          <p
-            type="submit"
-            value="share"
-            className="nav-link"
-            onClick={this.props.logout}
-          >
+          <p className="nav-link" onClick={this.props.logout}>
             Log Out
           </p>
-          <p
-            type="submit"
-            value="share"
-            className="nav-link"
-            onClick={this.props.goHome}
-          >
+          <p className="nav-link" onClick={this.props.goHome}>
             Home
           </p>
           {this.props.view !== "selection" && (
-            <p
-              type="submit"
-              value="share"
-              className="nav-link"
-              onClick={this.props.goBack}
-            >
+            <p className="nav-link" onClick={this.props.goBack}>
               Back
             </p>
           )}
