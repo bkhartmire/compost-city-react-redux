@@ -1,11 +1,27 @@
 import React from "react";
 import "./Receive.css";
+import Switch from "react-switch";
 
 export default class Receive extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: {
+        email: "",
+        zipcode: "",
+        bokashi: false,
+        waste: false,
+        foodScraps: false
+      }
+    };
+  }
+  handleChange() {}
+  handleSwitch() {}
+  handleSubmit() {}
   render() {
     return (
       <div id="receive">
-        <form className="user-form" id="signup-form">
+        <form className="compost-form" id="signup-form">
           <div className="form-group">
             <label className="title">Create Post</label>
             <input
@@ -22,9 +38,50 @@ export default class Receive extends React.Component {
               placeholder="Zip Code"
             />
           </div>
-          <div className="form-group">{/* bokashi */}</div>
-          <div className="form-group">{/* waste */}</div>
-          <div className="form-group">{/* food scraps */}</div>
+          <div className="form-group">
+            {" "}
+            <h4 className="specifications">Can you accept the following?</h4>
+          </div>
+
+          <div className="form-group">
+            <label className="specifications border-bottom ">
+              <span className="specifications">Bokashi:</span>
+              <div class="switch">
+                <Switch
+                  onChange={this.handleSwitch.bind(this)}
+                  checked={false}
+                  onColor="#6eb43e"
+                />
+              </div>
+            </label>
+          </div>
+
+          <div className="form-group">
+            <label className="specifications border-bottom">
+              <span className="specifications">Composted animal waste:</span>
+              <div class="switch">
+                <Switch
+                  onChange={this.handleSwitch.bind(this)}
+                  checked={false}
+                  onColor="#6eb43e"
+                />
+              </div>
+            </label>
+          </div>
+
+          <div className="form-group">
+            <label className="specifications">
+              <span className="specifications">Food scraps:</span>
+              <div class="switch">
+                <Switch
+                  onChange={this.handleSwitch.bind(this)}
+                  checked={false}
+                  onColor="#6eb43e"
+                />
+              </div>
+            </label>
+          </div>
+
           <div className="form-group">
             <button type="submit" className="green-btn">
               Submit

@@ -1,4 +1,27 @@
 #receive {
   margin: auto;
-  width: 35%;
+  width: 50%;
+}
+
+.compost-form {
+  color: whitesmoke;
+  padding-top: 100px;
+  font-family: "Roboto", sans-serif;
+}
+
+label.specifications {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  float: left;
+  text-align: left;
+
+  width: 100%;
+}
+
+span.specifications {
+  margin-right: 10px;
+}
+
+div.switch {
+  float: right;
 }
