@@ -39,7 +39,6 @@ class Home extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    userType: state.userType,
     view: state.view
   };
 };

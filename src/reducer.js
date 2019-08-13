@@ -7,7 +7,6 @@ const defaultState = {
   currentUser: JSON.parse(window.localStorage.getItem("currentUser")),
   loading: false,
   view: getView(),
-  // userType: null,
   postResults: [],
   posts: [],
   query: null
