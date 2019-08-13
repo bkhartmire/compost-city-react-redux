@@ -3,6 +3,9 @@ const express = require("express");
 const morgan = require("morgan");
 const path = require("path");
 const db = require("./knex.js");
+const axios = require("axios");
+
+require("dotenv").config();
 
 const app = express();
 
@@ -36,9 +39,37 @@ app.get("/api/users/:email", async (req, res) => {
   }
 });
 
+app.get("/api/zipcodes/:zipcode/:radius", async (req, res) => {
+  try {
+    const zipcodes = await axios.get(
+      `https://www.zipcodeapi.com/rest/${process.env.API_KEY}/radius.json/${
+        req.params.zipcode
+      }/${req.params.radius}/mile`
+    );
+    res.send(zipcodes.data.zip_codes);
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(404);
+  }
+});
+
 app.post("/api/users", async (req, res) => {
-  await db("users").insert(req.body);
-  res.sendStatus(200);
+  try {
+    await db("users").insert(req.body);
+    res.sendStatus(200);
+  } catch (err) {
+    res.sendStatus(400);
+  }
+});
+
+app.post("/api/posts", async (req, res) => {
+  try {
+    await db("posts").insert([req.body]);
+    res.sendStatus(200);
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(400);
+  }
 });
 
 app.get("*", (req, res) => {

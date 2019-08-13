@@ -43,9 +43,7 @@ export function submitZipcode(data) {
     return (async () => {
       dispatch({ type: "LOADING" });
       const zipcodes = await axios.get(
-        `https://cors-anywhere.herokuapp.com/zipcodeapi.com/rest/aSzOpqofvOig3snnwxRBZ7JTPOJSstDBgWp9Cp8Qgu8XvXHSvf1mdLntzkezoh7C/radius.json/${
-          data.zipcode
-        }/${data.radius}/mile`
+        `/api/zipcodes/${data.zipcode}/${data.radius}`
       );
       dispatch({
         type: "SET_QUERY",
@@ -53,12 +51,30 @@ export function submitZipcode(data) {
       });
       const result = [];
       data.allPosts.forEach(post => {
-        for (const item of zipcodes.data.zip_codes) {
+        for (const item of zipcodes.data) {
           if (item.zip_code === post.zip_code)
             result.push({ ...post, distance: item.distance.toFixed(2) });
         }
       });
       dispatch({ type: "LIST_RESULTS", payload: result });
+    })();
+  };
+}
+
+export function submitPost(data) {
+  const body = {
+    user_name: data.username,
+    user_email: data.email,
+    zip_code: data.zipcode,
+    food_scraps: data.foodScraps,
+    human_or_animal_waste: data.waste,
+    bokashi: data.bokashi
+  };
+  return function(dispatch) {
+    return (async () => {
+      dispatch({ type: "LOADING" });
+      const newPost = await axios.post("/api/posts", body);
+      dispatch({ type: "SUBMIT_POST", payload: newPost });
     })();
   };
 }

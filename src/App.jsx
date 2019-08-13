@@ -3,7 +3,7 @@ import "./App.css";
 import Welcome from "./components/Welcome";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
-import Home from "./components/Home";
+import Selection from "./components/Selection";
 import { connect } from "react-redux";
 import { fetchPosts } from "./actions";
 
@@ -17,7 +17,7 @@ class App extends React.Component {
         {this.props.view === "welcome" && <Welcome />}
         {this.props.view === "loginForm" && <Login />}
         {this.props.view === "signupForm" && <Signup />}
-        {this.props.currentUser && <Home />}
+        {this.props.currentUser && <Selection />}
       </div>
     );
   }

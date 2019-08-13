@@ -1,14 +1,14 @@
 import React from "react";
-import "./Home.css";
+import "./Selection.css";
 import Prompt from "./Prompt";
 import Receive from "./Receive";
 import Share from "./Share";
 import { connect } from "react-redux";
 
-class Home extends React.Component {
+class Selection extends React.Component {
   render() {
     return (
-      <div id="home">
+      <div id="selection">
         <div className="nav-link-container">
           <p
             type="submit"
@@ -18,18 +18,26 @@ class Home extends React.Component {
           >
             Log Out
           </p>
-          {this.props.view !== "home" && (
+          <p
+            type="submit"
+            value="share"
+            className="nav-link"
+            onClick={this.props.goHome}
+          >
+            Home
+          </p>
+          {this.props.view !== "selection" && (
             <p
               type="submit"
               value="share"
               className="nav-link"
-              onClick={this.props.goHome}
+              onClick={this.props.goBack}
             >
-              Home
+              Back
             </p>
           )}
         </div>
-        {this.props.view === "home" && <Prompt />}
+        {this.props.view === "selection" && <Prompt />}
         {this.props.view === "receive" && <Receive />}
         {this.props.view === "share" && <Share />}
       </div>
@@ -46,6 +54,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     logout: () => dispatch({ type: "LOGOUT_USER" }),
+    goBack: () => dispatch({ type: "GO_BACK" }),
     goHome: () => dispatch({ type: "GO_HOME" })
   };
 };
@@ -53,4 +62,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Home);
+)(Selection);
