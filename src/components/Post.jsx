@@ -43,8 +43,8 @@ export default class Post extends React.Component {
               <img
                 src={waste}
                 className="detail"
-                alt="This user accepts componsted animal and human waste."
-                title="This user accepts componsted animal and human waste."
+                alt="This user accepts composted animal and human waste."
+                title="This user accepts composted animal and human waste."
               />
             )}
           </div>
