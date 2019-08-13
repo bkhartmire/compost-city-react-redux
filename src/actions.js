@@ -28,3 +28,7 @@ function setUser(user) {
     payload: user
   };
 }
+
+export function submitZipcode(data) {
+  debugger;
+}

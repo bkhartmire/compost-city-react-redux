@@ -3,15 +3,15 @@
 }
 #signup {
   margin: auto;
-  width: 30%;
+  width: 35%;
 }
 
 #login {
   margin: auto;
-  width: 30%;
+  width: 35%;
 }
 
-form {
+.user-form {
   color: whitesmoke;
   padding-top: 100px;
   font-family: "Roboto", sans-serif;

@@ -27,7 +27,11 @@ class Login extends React.Component {
   render() {
     return (
       <div id="login">
-        <form onSubmit={this.handleSubmit.bind(this)} id="login-form">
+        <form
+          className="user-form"
+          onSubmit={this.handleSubmit.bind(this)}
+          id="login-form"
+        >
           <div className="form-group">
             <label class="title">Log In</label>
             <input

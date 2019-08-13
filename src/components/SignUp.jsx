@@ -6,7 +6,7 @@ class Signup extends React.Component {
   render() {
     return (
       <div id="signup">
-        <form id="signup-form">
+        <form className="user-form" id="signup-form">
           <div className="form-group">
             <label class="title">Sign Up</label>
             <input name="" className="form-control" placeholder="Username" />

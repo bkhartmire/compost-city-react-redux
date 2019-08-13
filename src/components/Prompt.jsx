@@ -10,7 +10,7 @@ class Prompt extends React.Component {
           <button
             type="submit"
             value="receive"
-            className="option"
+            className="button"
             onClick={e => this.props.selectType(e.target.value)}
           >
             {" "}
@@ -19,7 +19,7 @@ class Prompt extends React.Component {
           <button
             type="submit"
             value="share"
-            className="option"
+            className="button"
             onClick={e => this.props.selectType(e.target.value)}
           >
             {" "}

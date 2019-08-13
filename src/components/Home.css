@@ -6,13 +6,12 @@ h5 {
 #prompt {
   padding-top: 100px;
 }
-
 #home {
   margin: auto;
-  width: 50%;
+  width: 100%;
 }
 
-.option {
+.button {
   display: inline;
   width: 100px;
   background: rgb(110, 180, 62, 0.7);
@@ -27,7 +26,7 @@ h5 {
   color: whitesmoke;
 }
 
-.option:hover {
+.button:hover {
   cursor: pointer;
   background: rgb(110, 180, 62);
 }

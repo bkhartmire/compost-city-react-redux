@@ -1,7 +1,11 @@
 const defaultState = {
-  currentUser: null, //name, email,
+  // currentUser: null,
+  currentUser: {
+    email: "user1@email.com",
+    username: "Jane"
+  }, //should initialize null
   loading: false,
-  view: "welcome",
+  view: "home", //should initialize welcome
   userType: null //receive or share
 };
 
