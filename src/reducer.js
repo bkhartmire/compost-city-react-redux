@@ -7,7 +7,7 @@ const defaultState = {
   currentUser: JSON.parse(window.localStorage.getItem("currentUser")),
   loading: false,
   view: getView(),
-  userType: window.localStorage.getItem("userType"),
+  // userType: null,
   postResults: [],
   posts: [],
   query: null
@@ -37,12 +37,15 @@ const reducer = (state = defaultState, action) => {
         loading: false,
         view: "home"
       };
-    case "SET_USER_TYPE":
-      window.localStorage.setItem("userType", action.payload);
-      return { ...state, userType: action.payload };
+    case "SET_USER_VIEW":
+      window.localStorage.setItem("view", action.payload);
+      return { ...state, view: action.payload };
     case "LOGOUT_USER":
       window.localStorage.clear();
       return { ...defaultState, currentUser: null, view: "welcome" };
+    case "GO_HOME":
+      window.localStorage.setItem("view", "home");
+      return { ...state, view: "home" };
     case "SET_QUERY":
       return { ...state, query: action.payload };
     case "LIST_RESULTS":

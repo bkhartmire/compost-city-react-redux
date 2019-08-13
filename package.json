@@ -37,9 +37,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "migrate": "npx knex migrate:latest --knexfile server/knex.js",
-    "seedUsers": "node seeds/01_users_seeds.js",
-    "seedPosts": "node seeds/02_posts_seeds.js",
-    "seed": "yarn seedUsers && yarn seedPosts"
+    "seed-users": "node seeds/01_users_seeds.js",
+    "seed-posts": "node seeds/02_posts_seeds.js"
   },
   "engines": {
     "node": "10.16.0",

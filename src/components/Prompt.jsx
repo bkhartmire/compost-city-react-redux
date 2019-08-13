@@ -32,7 +32,7 @@ class Prompt extends React.Component {
 const mapDispatchToProps = dispatch => {
   return {
     selectType: type => {
-      dispatch({ type: "SET_USER_TYPE", payload: type });
+      dispatch({ type: "SET_USER_VIEW", payload: type });
     }
   };
 };

@@ -9,17 +9,29 @@ class Home extends React.Component {
   render() {
     return (
       <div id="home">
-        <button
-          type="submit"
-          value="share"
-          className="logout-btn"
-          onClick={this.props.logout}
-        >
-          Log Out
-        </button>
-        {!this.props.userType && <Prompt />}
-        {this.props.userType === "receive" && <Receive />}
-        {this.props.userType === "share" && <Share />}
+        <div className="nav-link-container">
+          <p
+            type="submit"
+            value="share"
+            className="nav-link"
+            onClick={this.props.logout}
+          >
+            Log Out
+          </p>
+          {this.props.view !== "home" && (
+            <p
+              type="submit"
+              value="share"
+              className="nav-link"
+              onClick={this.props.goHome}
+            >
+              Home
+            </p>
+          )}
+        </div>
+        {this.props.view === "home" && <Prompt />}
+        {this.props.view === "receive" && <Receive />}
+        {this.props.view === "share" && <Share />}
       </div>
     );
   }
@@ -27,13 +39,15 @@ class Home extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    userType: state.userType
+    userType: state.userType,
+    view: state.view
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    logout: () => dispatch({ type: "LOGOUT_USER" })
+    logout: () => dispatch({ type: "LOGOUT_USER" }),
+    goHome: () => dispatch({ type: "GO_HOME" })
   };
 };
 
