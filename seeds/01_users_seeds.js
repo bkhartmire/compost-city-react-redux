@@ -5,62 +5,52 @@ const db = require("../server/knex.js");
     {
       email: "user1@email.com",
       password: "password",
-      username: "Jane",
-      zip_code: "90019"
+      username: "Jane"
     },
     {
       email: "user2@email.com",
       password: "password",
-      username: "Sam",
-      zip_code: "91505"
+      username: "Sam"
     },
     {
       email: "user3@email.com",
       password: "password",
-      username: "Yuki",
-      zip_code: "90012"
+      username: "Yuki"
     },
     {
       email: "user4@email.com",
       password: "password",
-      username: "Maria",
-      zip_code: "91350"
+      username: "Maria"
     },
     {
       email: "user5@email.com",
       password: "password",
-      username: "Jon",
-      zip_code: "91351"
+      username: "Jon"
     },
     {
       email: "user6@email.com",
       password: "password",
-      username: "Tanaka",
-      zip_code: "90064"
+      username: "Tanaka"
     },
     {
       email: "user7@email.com",
       password: "password",
-      username: "Haruto",
-      zip_code: "90018"
+      username: "Haruto"
     },
     {
       email: "user8@email.com",
       password: "password",
-      username: "Austin",
-      zip_code: "90038"
+      username: "Austin"
     },
     {
       email: "user9@email.com",
       password: "password",
-      username: "Don",
-      zip_code: "91504"
+      username: "Don"
     },
     {
       email: "user10@email.com",
       password: "password",
-      username: "Jessica",
-      zip_code: "91606"
+      username: "Jessica"
     }
   ];
   const result = await db("users").insert(seeds);

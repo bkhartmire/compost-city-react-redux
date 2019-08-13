@@ -2,6 +2,7 @@ exports.up = function(knex) {
   return knex.schema.createTable("posts", t => {
     t.increments().index();
     t.text("user_name");
+    t.string("zip_code").notNullable();
     t.foreign("user_name")
       .references("username")
       .inTable("users");
