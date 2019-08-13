@@ -43,7 +43,7 @@ class Share extends React.Component {
               className="radius"
               placeholder="Please enter your zip code:"
             />
-            <select onChange={this.handleSelect.bind(this)} class="radius">
+            <select onChange={this.handleSelect.bind(this)} className="radius">
               <option value="2">2 miles</option>
               <option value="5">5 miles</option>
               <option value="10">10 miles</option>

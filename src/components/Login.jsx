@@ -33,7 +33,7 @@ class Login extends React.Component {
           id="login-form"
         >
           <div className="form-group">
-            <label class="title">Log In</label>
+            <label className="title">Log In</label>
             <input
               name="email"
               className="form-control"

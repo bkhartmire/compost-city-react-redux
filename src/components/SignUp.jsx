@@ -8,7 +8,7 @@ class Signup extends React.Component {
       <div id="signup">
         <form className="user-form" id="signup-form">
           <div className="form-group">
-            <label class="title">Sign Up</label>
+            <label className="title">Sign Up</label>
             <input name="" className="form-control" placeholder="Username" />
           </div>
           <div className="form-group">

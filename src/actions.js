@@ -54,7 +54,8 @@ export function submitZipcode(data) {
       const result = [];
       data.allPosts.forEach(post => {
         for (const item of zipcodes.data.zip_codes) {
-          if (item.zip_code === post.zip_code) result.push(post);
+          if (item.zip_code === post.zip_code)
+            result.push({ ...post, distance: item.distance.toFixed(2) });
         }
       });
       dispatch({ type: "LIST_RESULTS", payload: result });
