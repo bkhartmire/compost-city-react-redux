@@ -35,8 +35,7 @@ class Signup extends React.Component {
           </div>
           <div className="form-group">
             <button type="submit" className="green-btn">
-              {" "}
-              Sign Up{" "}
+              Sign Up
             </button>
           </div>
         </form>

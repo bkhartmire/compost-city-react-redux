@@ -55,8 +55,7 @@ class Share extends React.Component {
               className="button"
               onChange={e => this.props.handleType(e.target.value)}
             >
-              {" "}
-              Search{" "}
+              Search
             </button>
           </div>
         </form>

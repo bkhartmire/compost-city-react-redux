@@ -13,8 +13,7 @@ class Prompt extends React.Component {
             className="button"
             onClick={e => this.props.selectType(e.target.value)}
           >
-            {" "}
-            Receive{" "}
+            Receive
           </button>
           <button
             type="submit"
@@ -22,8 +21,7 @@ class Prompt extends React.Component {
             className="button"
             onClick={e => this.props.selectType(e.target.value)}
           >
-            {" "}
-            Share{" "}
+            Share
           </button>
         </div>
       </div>

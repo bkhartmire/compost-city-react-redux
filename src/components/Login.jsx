@@ -53,8 +53,7 @@ class Login extends React.Component {
           </div>
           <div className="form-group">
             <button type="submit" className="green-btn">
-              {" "}
-              Login{" "}
+              Login
             </button>
           </div>
         </form>
