@@ -6,7 +6,8 @@ export function loginUser(data) {
       dispatch({ type: "LOADING" });
       const user = await axios.get(`/api/users/${data.email}`);
       const resp = user.data.pop();
-      if (resp.password === data.password) dispatch(setUser(resp));
+      if (resp.password === data.password)
+        dispatch(setUser({ username: resp.username, email: resp.email }));
     })();
   };
 }

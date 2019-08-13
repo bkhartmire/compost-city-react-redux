@@ -19,7 +19,7 @@ app.use(express.static(path.resolve(__dirname, "..", "build")));
 app.get("/api/users/:email", async (req, res) => {
   try {
     const user = await db("users")
-      .select("username", "email", "zip_code", "password")
+      .select("username", "email", "password")
       .where({ email: req.params.email });
     res.json(user);
   } catch (err) {

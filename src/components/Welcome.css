@@ -12,7 +12,8 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  font-family: "Roboto", sans-serif;
+  color: whitesmoke;
 }
 
 .enter {

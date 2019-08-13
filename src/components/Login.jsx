@@ -54,8 +54,9 @@ class Login extends React.Component {
             </button>
           </div>
         </form>
-        <p className="form" onClick={this.props.viewSignupForm}>
-          Don't have an account yet?
+        <p className="form">Don't have an account yet?</p>
+        <p className="link" onClick={this.props.viewSignupForm}>
+          Click here.
         </p>
       </div>
     );
@@ -68,7 +69,7 @@ const mapDispatchToProps = dispatch => {
       dispatch(loginUser(data));
     },
     viewSignupForm: () => {
-      dispatch({ type: "VIEW_LOGIN_FORM" });
+      dispatch({ type: "VIEW_SIGNUP_FORM" });
     }
   };
 };

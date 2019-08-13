@@ -1,7 +1,8 @@
 const defaultState = {
-  currentUser: null, //name, email, zipcode
+  currentUser: null, //name, email,
   loading: false,
-  view: "welcome"
+  view: "welcome",
+  userType: null //receive or share
 };
 
 const reducer = (state = defaultState, action) => {
@@ -19,6 +20,8 @@ const reducer = (state = defaultState, action) => {
         loading: false,
         view: "home"
       };
+    case "SET_USER_TYPE":
+      return { ...state, userType: action.payload };
     default:
       return state;
   }

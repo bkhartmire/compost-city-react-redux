@@ -10,7 +10,10 @@ import "bootstrap/dist/css/bootstrap.css";
 
 const createStoreWithMiddleware = compose(applyMiddleware(thunk))(createStore);
 
-const store = createStoreWithMiddleware(reducer);
+const store = createStoreWithMiddleware(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
   <Provider store={store}>
