@@ -5,8 +5,12 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Home from "./components/Home";
 import { connect } from "react-redux";
+import { fetchPosts } from "./actions";
 
 class App extends React.Component {
+  componentDidMount() {
+    this.props.fetchPosts();
+  }
   render() {
     return (
       <div className="App">
@@ -26,4 +30,13 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchPosts: () => dispatch(fetchPosts())
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

@@ -16,6 +16,15 @@ app.use(
 // Serve static assets
 app.use(express.static(path.resolve(__dirname, "..", "build")));
 
+app.get("/api/posts", async (req, res) => {
+  try {
+    const posts = await db("posts").select();
+    res.json(posts);
+  } catch (err) {
+    res.sendStatus(404);
+  }
+});
+
 app.get("/api/users/:email", async (req, res) => {
   try {
     const user = await db("users")

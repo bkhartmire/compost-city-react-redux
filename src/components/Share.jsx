@@ -2,6 +2,7 @@ import React from "react";
 import "./Share.css";
 import { connect } from "react-redux";
 import { submitZipcode } from "../actions";
+import PostList from "./PostList";
 
 class Share extends React.Component {
   constructor(props) {
@@ -21,15 +22,17 @@ class Share extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    e.target.reset();
     this.props.submitZipcode({
       zipcode: this.state.zipcode,
-      radius: this.state.radius
+      radius: this.state.radius,
+      allPosts: this.props.allPosts
     });
   }
   render() {
     return (
       <div id="share">
-        <h5 class="zip-code-prompt">
+        <h5 className="zip-code-prompt">
           How far would you like to search for people to share with?
         </h5>
         <form id="zipcode-form" onSubmit={this.handleSubmit.bind(this)}>
@@ -44,7 +47,8 @@ class Share extends React.Component {
               <option value="2">2 miles</option>
               <option value="5">5 miles</option>
               <option value="10">10 miles</option>
-              <option value=">10">> 10 miles</option>
+              <option value="15">15 miles</option>
+              <option value="20">20 miles</option>
             </select>
             <button
               type="submit"
@@ -57,10 +61,18 @@ class Share extends React.Component {
             </button>
           </div>
         </form>
+        {this.props.result.length > 0 && <PostList posts={this.props.result} />}
       </div>
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    result: state.postResults,
+    allPosts: state.posts
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -69,6 +81,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Share);
