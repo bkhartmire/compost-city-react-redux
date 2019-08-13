@@ -40,8 +40,8 @@ class Signup extends React.Component {
           </div>
         </form>
 
-        <p className="form">Already have an account?</p>
-        <p className="link" onClick={this.props.viewLoginForm}>
+        <p className="form white">Already have an account?</p>
+        <p className="link white" onClick={this.props.viewLoginForm}>
           Click here.
         </p>
       </div>

@@ -29,7 +29,6 @@ class NewPostForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     e.target.reset();
-    debugger;
     this.props.submitPost({
       ...this.state.data,
       username: this.props.currentUser.username,

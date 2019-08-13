@@ -57,8 +57,8 @@ class Login extends React.Component {
             </button>
           </div>
         </form>
-        <p className="form">Don't have an account yet?</p>
-        <p className="link" onClick={this.props.viewSignupForm}>
+        <p className="form white">Don't have an account yet?</p>
+        <p className="link white" onClick={this.props.viewSignupForm}>
           Click here.
         </p>
       </div>

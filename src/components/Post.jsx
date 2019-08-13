@@ -17,7 +17,7 @@ export default class Post extends React.Component {
           />
         </div>
         <div className="text">
-          <p>
+          <p className="white">
             {this.props.username} is located {this.props.distance} mile(s) away.
           </p>
         </div>

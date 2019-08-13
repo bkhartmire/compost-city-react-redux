@@ -64,7 +64,7 @@ app.post("/api/users", async (req, res) => {
 
 app.post("/api/posts", async (req, res) => {
   try {
-    await db("posts").insert([req.body]);
+    const post = await db("posts").insert([req.body]);
     res.sendStatus(200);
   } catch (err) {
     console.log(err);

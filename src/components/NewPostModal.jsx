@@ -6,24 +6,22 @@ import "./Receive.css";
 class NewPostModal extends React.Component {
   render() {
     return (
-      <Modal.Dialog>
+      <Modal show={true} animation={true} centered={true}>
         <Modal.Header closeButton>
           <Modal.Title>Post Submitted</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
-          <p>
-            Thank you for submitting a new post! Now please wait for another
-            user to contact you.
-          </p>
+          <p>Thank you for submitting a new post!</p>
+          <p> Now please wait for another user to contact you.</p>
         </Modal.Body>
 
         <Modal.Footer>
-          <button onClick={this.props.goHome} className="green-btn">
+          <button onClick={this.props.goHome} className="green-btn-modal">
             Exit
           </button>
         </Modal.Footer>
-      </Modal.Dialog>
+      </Modal>
     );
   }
 }

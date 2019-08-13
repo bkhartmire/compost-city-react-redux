@@ -16,7 +16,9 @@ class Welcome extends React.Component {
     return (
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Help your community develop a closed-loop waste cycle.</p>
+        <p className="white">
+          Help your community develop a closed-loop waste cycle.
+        </p>
         <h5 className="enter" onClick={this.handleClick.bind(this)}>
           Join the movement.
         </h5>

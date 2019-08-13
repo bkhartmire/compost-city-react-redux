@@ -57,10 +57,9 @@ const reducer = (state = defaultState, action) => {
     case "LIST_RESULTS":
       return { ...state, postResults: action.payload, loading: false };
     case "SUBMIT_POST":
-      debugger;
       return {
         ...state,
-        posts: [...state.posts, action.payload],
+        posts: [...state.posts, JSON.parse(action.payload.config.data)],
         loading: false,
         showModal: true
       };
