@@ -10,8 +10,8 @@ export default class LearnMore extends React.Component {
           <p className="learn-more">
             Did you know organic waste can't properly break down inside
             landfills? After you toss your food scraps in the trash, they get
-            transported far away in a large truck. These trucks create a lot of
-            CO2 emissions.
+            transported far away in a large truck that generates a lot of CO2
+            emissions along the journey.
           </p>
           <br />
           <p className="learn-more">
@@ -24,8 +24,8 @@ export default class LearnMore extends React.Component {
             Don't have any need for compost? Compost City connects you with
             local growers and gardeners. By composting your food for local
             growers, you can reduce greenhouse gas emissions and the need for
-            chemical fertilizers, helping growers to save money and keep our
-            soil healthy.
+            chemical fertilizers, helping growers to both save money and keep
+            our soil healthy.
           </p>
         </div>
       </div>
