@@ -15,7 +15,6 @@ class Login extends React.Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    e.target.reset();
     this.props.loginUser(this.state.credentials);
   }
   handleChange(e) {

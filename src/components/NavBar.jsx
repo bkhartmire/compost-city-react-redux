@@ -22,12 +22,11 @@ class Navbar extends React.Component {
           </p>
         )}
 
-        {this.props.view === "receive" ||
-          (this.props.view === "share" && (
-            <p className="nav-link" onClick={this.props.goBack}>
-              Back
-            </p>
-          ))}
+        {(this.props.view === "receive" || this.props.view === "share") && (
+          <p className="nav-link" onClick={this.props.goBack}>
+            Back
+          </p>
+        )}
       </div>
     );
   }
