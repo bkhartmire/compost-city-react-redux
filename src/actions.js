@@ -74,7 +74,7 @@ export function submitPost(data) {
     return (async () => {
       dispatch({ type: "LOADING" });
       const newPost = await axios.post("/api/posts", body);
-      dispatch({ type: "SUBMIT_POST", payload: newPost });
+      dispatch({ type: "SUBMIT_POST", payload: newPost.data });
     })();
   };
 }

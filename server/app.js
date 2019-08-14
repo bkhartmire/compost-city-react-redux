@@ -4,11 +4,14 @@ const morgan = require("morgan");
 const path = require("path");
 const db = require("./knex.js");
 const axios = require("axios");
+const bodyParser = require("body-parser");
 
 require("dotenv").config();
 
 const app = express();
 
+//Parse request bodies as json
+app.use(bodyParser.json({ type: "application/json", limit: "50mb" }));
 // Setup logger
 app.use(
   morgan(
@@ -64,10 +67,12 @@ app.post("/api/users", async (req, res) => {
 
 app.post("/api/posts", async (req, res) => {
   try {
-    const post = await db("posts").insert([req.body]);
+    await db("posts").insert(req.body);
+    res.send(req.body);
     res.sendStatus(200);
   } catch (err) {
     console.log(err);
+
     res.sendStatus(400);
   }
 });

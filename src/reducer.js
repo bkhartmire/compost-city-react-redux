@@ -16,7 +16,6 @@ const defaultState = {
 const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case "LOADING":
-      debugger;
       return { ...state, loading: true };
     case "SET_POSTS":
       return { ...state, posts: action.payload, loading: false };
@@ -61,10 +60,9 @@ const reducer = (state = defaultState, action) => {
     case "LIST_RESULTS":
       return { ...state, postResults: action.payload, loading: false };
     case "SUBMIT_POST":
-      debugger;
       return {
         ...state,
-        posts: [...state.posts, JSON.parse(action.payload.config.data)],
+        posts: [...state.posts, action.payload],
         loading: false,
         showModal: true
       };
