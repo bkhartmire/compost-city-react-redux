@@ -16,6 +16,7 @@ const defaultState = {
 const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case "LOADING":
+      debugger;
       return { ...state, loading: true };
     case "SET_POSTS":
       return { ...state, posts: action.payload, loading: false };
@@ -28,6 +29,9 @@ const reducer = (state = defaultState, action) => {
     case "VIEW_SELECTION":
       window.localStorage.setItem("view", "selection");
       return { ...state, view: "selection" };
+    case "LEARN_MORE":
+      window.localStorage.setItem("view", "learn more");
+      return { ...state, view: "learn more" };
     case "SET_USER":
       window.localStorage.setItem(
         "currentUser",
@@ -57,6 +61,7 @@ const reducer = (state = defaultState, action) => {
     case "LIST_RESULTS":
       return { ...state, postResults: action.payload, loading: false };
     case "SUBMIT_POST":
+      debugger;
       return {
         ...state,
         posts: [...state.posts, JSON.parse(action.payload.config.data)],

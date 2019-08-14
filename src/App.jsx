@@ -4,6 +4,8 @@ import Welcome from "./components/Welcome";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Selection from "./components/Selection";
+import LearnMore from "./components/LearnMore";
+import Navbar from "./components/NavBar";
 import { connect } from "react-redux";
 import { fetchPosts } from "./actions";
 
@@ -14,9 +16,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Navbar />
         {this.props.view === "welcome" && <Welcome />}
         {this.props.view === "loginForm" && <Login />}
         {this.props.view === "signupForm" && <Signup />}
+        {this.props.view === "learn more" && <LearnMore />}
         {this.props.currentUser && <Selection />}
       </div>
     );
