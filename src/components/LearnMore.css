@@ -5,33 +5,30 @@ div.learn-more {
   height: 100%;
   background-image: url(../images/soil.jpg);
   background-size: cover;
+  position: relative;
 }
 
 div.learn-more-text {
+  /* width: 70%;
+  margin: auto; */
+  padding-top: 5px;
+  top: 45%;
+  left: 40%;
+  height: 70%;
   width: 70%;
-  margin: auto;
-  top: 150px;
-  left: 150px;
+  margin: -15% 0 0 -25%;
   position: absolute;
   border: thin solid ghostwhite;
   border-radius: 0.25rem;
   background-color: #282c34;
   opacity: 0.8;
   z-index: 5;
+  overflow: scroll;
 }
 
 p.learn-more {
   color: whitesmoke;
   font-family: "Roboto", sans-serif;
   margin: 15px;
+  font-size: 30px;
 }
-
-div.learn-more-photo {
-  width: 100%;
-}
-
-/* #soil {
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-} */

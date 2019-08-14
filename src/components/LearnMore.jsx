@@ -13,12 +13,14 @@ export default class LearnMore extends React.Component {
             transported far away in a large truck. These trucks let off a lot of
             CO2 emissions.
           </p>
+          <br />
           <p className="learn-more">
             Then once your food scraps are thrown in a landfill, they will
             release methane gas. Methane is a greenhose gas at least 21 times
             more harmful than carbon. Your food scraps can be turned into a
             nutritious fertilizer instead.
           </p>
+          <br />
           <p className="learn-more">
             Don't have any soil to fertilize? Compost City connects you with
             local growers and gardeners. By composting your food waste and
