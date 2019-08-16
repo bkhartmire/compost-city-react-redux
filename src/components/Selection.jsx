@@ -1,5 +1,5 @@
 import React from "react";
-import "./Selection.css";
+import "../styles/Selection.css";
 import Prompt from "./Prompt";
 import Receive from "./Receive";
 import Share from "./Share";

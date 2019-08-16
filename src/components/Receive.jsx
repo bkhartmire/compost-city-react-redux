@@ -1,5 +1,5 @@
 import React from "react";
-import "./Receive.css";
+import "../styles/Receive.css";
 import NewPostForm from "./NewPostForm";
 import NewPostModal from "./NewPostModal";
 import { connect } from "react-redux";

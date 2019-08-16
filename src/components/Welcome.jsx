@@ -1,5 +1,5 @@
 import React from "react";
-import "./Welcome.css";
+import "../styles/Welcome.css";
 import logo from "../images/clipart.png";
 import { connect } from "react-redux";
 

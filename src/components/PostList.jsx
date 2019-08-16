@@ -1,6 +1,6 @@
 import React from "react";
 import Post from "./Post";
-import "./PostList.css";
+import "../styles/PostList.css";
 import { connect } from "react-redux";
 
 class PostList extends React.Component {

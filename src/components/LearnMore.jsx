@@ -1,5 +1,5 @@
 import React from "react";
-import "./LearnMore.css";
+import "../styles/LearnMore.css";
 
 export default class LearnMore extends React.Component {
   render() {

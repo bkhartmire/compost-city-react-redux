@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
 import { connect } from "react-redux";
-import "./Receive.css";
+import "../styles/Receive.css";
 
 class NewPostModal extends React.Component {
   render() {

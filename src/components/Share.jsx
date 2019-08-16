@@ -1,5 +1,5 @@
 import React from "react";
-import "./Share.css";
+import "../styles/Share.css";
 import { connect } from "react-redux";
 import { submitZipcode } from "../actions";
 import PostList from "./PostList";

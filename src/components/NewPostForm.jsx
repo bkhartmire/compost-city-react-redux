@@ -1,5 +1,5 @@
 import React from "react";
-import "./Receive.css";
+import "../styles/Receive.css";
 import Switch from "react-switch";
 import { connect } from "react-redux";
 import { submitPost } from "../actions";

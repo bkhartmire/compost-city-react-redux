@@ -1,5 +1,5 @@
 import React from "react";
-import "./PostList.css";
+import "../styles/PostList.css";
 import avatar from "../images/avatar-placeholder.png";
 import bokashi from "../images/bokashi.png";
 import foodScraps from "../images/foodscraps.png";

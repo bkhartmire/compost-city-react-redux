@@ -1,5 +1,5 @@
 import React from "react";
-import "./UserForms.css";
+import "../styles/UserForms.css";
 import { connect } from "react-redux";
 
 class Signup extends React.Component {
