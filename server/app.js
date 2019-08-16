@@ -59,6 +59,7 @@ app.get("/api/zipcodes/:zipcode/:radius", async (req, res) => {
 app.post("/api/users", async (req, res) => {
   try {
     await db("users").insert(req.body);
+    res.send(req.body);
     res.sendStatus(200);
   } catch (err) {
     res.sendStatus(400);
@@ -72,7 +73,6 @@ app.post("/api/posts", async (req, res) => {
     res.sendStatus(200);
   } catch (err) {
     console.log(err);
-
     res.sendStatus(400);
   }
 });

@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/UserForms.css";
 import { connect } from "react-redux";
+import { signupUser } from "../actions";
 
 class Signup extends React.Component {
   constructor(props) {
@@ -16,7 +17,18 @@ class Signup extends React.Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    this.props.signupUser(this.state.userInfo);
+    //add proper validation and error handling
+    if (
+      this.state.userInfo.password === this.state.userInfo.passwordConfirmation
+    ) {
+      this.props.signupUser({
+        username: this.state.userInfo.username,
+        email: this.state.userInfo.email,
+        password: this.state.userInfo.password
+      });
+    } else {
+      alert("passwords don't match");
+    }
   }
   handleChange(e) {
     const field = e.target.name;
@@ -86,6 +98,9 @@ class Signup extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
+    signupUser: data => {
+      dispatch(signupUser(data));
+    },
     viewLoginForm: () => {
       dispatch({ type: "VIEW_LOGIN_FORM" });
     }

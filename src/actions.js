@@ -27,14 +27,14 @@ export function loginUser(data) {
 
 export function signupUser(data) {
   return function(dispatch) {
-    return async () => {
+    return (async () => {
       dispatch({ type: "LOADING" });
       const user = await axios.post("/api/users", data);
       dispatch({
         type: "SET_USER",
-        payload: user
+        payload: user.data
       });
-    };
+    })();
   };
 }
 
