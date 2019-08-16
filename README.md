@@ -21,9 +21,9 @@ Run `yarn start` to start a production server. This will automatically run migra
 
 If you'd like to run the app with some dummy data, run the following commands to seed the database. It's important that you run them in this order:
 
-`yarn seedUsers`
+`yarn seed-users`
 
-`yarn seedPosts`
+`yarn seed-posts`
 
 You can now use one of ten fake user accounts to play around with the app.
 email: user1@email.com, user2@email.com, ... user10@email.com

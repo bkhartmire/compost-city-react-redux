@@ -17,6 +17,7 @@ export function loginUser(data) {
       dispatch({ type: "LOADING" });
       const user = await axios.get(`/api/users/${data.email}`);
       const resp = user.data.pop();
+      debugger;
       if (bcrypt.compareSync(data.password, resp.password))
         dispatch({
           type: "SET_USER",
