@@ -1,10 +1,12 @@
 const db = require("../server/knex.js");
+const bcrypt = require("bcryptjs");
 
+//fix user seed password!
 (async () => {
   const seeds = [
     {
       email: "user1@email.com",
-      password: "password",
+      password: bcrypt.hashSync("password", bcrypt.genSaltSync(8)),
       username: "Jane"
     },
     {

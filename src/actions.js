@@ -1,4 +1,5 @@
 import axios from "axios";
+const bcrypt = require("bcryptjs");
 
 export function fetchPosts() {
   return function(dispatch) {
@@ -16,7 +17,7 @@ export function loginUser(data) {
       dispatch({ type: "LOADING" });
       const user = await axios.get(`/api/users/${data.email}`);
       const resp = user.data.pop();
-      if (resp.password === data.password)
+      if (bcrypt.compareSync(data.password, resp.password))
         dispatch({
           type: "SET_USER",
           payload: { username: resp.username, email: resp.email }
@@ -29,7 +30,14 @@ export function signupUser(data) {
   return function(dispatch) {
     return (async () => {
       dispatch({ type: "LOADING" });
-      const user = await axios.post("/api/users", data);
+      const hashPassword = bcrypt.hashSync(
+        data.password,
+        bcrypt.genSaltSync(8)
+      );
+      const user = await axios.post("/api/users", {
+        ...data,
+        password: hashPassword
+      });
       dispatch({
         type: "SET_USER",
         payload: user.data
