@@ -25,7 +25,7 @@ If you'd like to run the app with some dummy data, run the following commands to
 
 `yarn seed-posts`
 
-You can now use one of ten fake user accounts to play around with the app.
+You can now create your own account or use one of ten fake user accounts to play around with the app.
 email: user1@email.com, user2@email.com, ... user10@email.com
 password: password
 
