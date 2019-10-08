@@ -48,7 +48,7 @@ const reducer = (state = defaultState, action) => {
       return { ...state, view: action.payload };
     case "LOGOUT_USER":
       window.localStorage.clear();
-      return { ...defaultState, currentUser: null, view: "welcome" };
+      return { ...state, currentUser: null, view: "welcome" };
     case "GO_BACK":
       window.localStorage.setItem("view", "selection");
       return { ...state, view: "selection", showModal: false };
