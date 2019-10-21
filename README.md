@@ -6,7 +6,7 @@
 
 # Compost City React-Redux App
 
-Compost City was created to connect urban city dwellers who want to compost their food waste with farmers and gardeners who can benefit from using it. Users can create an account and select whether they would like to receive or share compost. Users who would like to receive can submit a post listing their location and specifications about which types of compost they can receive. Users who would like to share can search for posted listings within a selected distance from their location. If they find a posted listing, they can then contact that user. This was created during my time as a student at Code Chrysalis.
+Compost City was created to connect urban city dwellers who want to compost their food waste with farmers and gardeners who can benefit from using it. Users can create an account and select whether they would like to receive or share compost. Users who would like to receive can submit a post listing their location and specifications about which types of compost they can receive. Users who would like to share can search for posted listings within a selected distance from their location. If they find a posted listing, they can then contact that user. This was created during my time as a student at Code Chrysalis during a 4 day solo MVP sprint.
 
 This app is deployed at https://compostcity.herokuapp.com/. To view this app's full functionality, you can either create your own account or log in as one of the ten seeded user accounts:
 
